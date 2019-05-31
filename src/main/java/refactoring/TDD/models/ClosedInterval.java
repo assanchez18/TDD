@@ -7,7 +7,8 @@ public class ClosedInterval extends Interval{
 	}
 
 	protected boolean isIncluded(double value) {
-		return this.min <= value && value <= this.max;
+		return super.isIncluded(value) ||
+			   (this.min == value || value == this.max);
 	}
 	
 }
