@@ -3,11 +3,11 @@ package refactoring.TDD.models;
 public class Point {
 
 	private double value;
-	private boolean open;
+	private PointType open;
 	
-	public Point(double value, boolean open) {
+	public Point(double value, PointType type) {
 		this.value = value;
-		this.open = open;
+		this.open = type;
 	}
 
 	public double getValue() {
@@ -15,7 +15,7 @@ public class Point {
 	}
 
 	public boolean isOpen() {
-		return this.open;
+		return PointType.isOpen(this.open);
 	}
 	
 }

@@ -23,7 +23,7 @@ public class OpenedClosedIntervalBuilder {
 	
 	Interval build() {
 		assert from <= until;
-		return new Interval(new Point(from,true), new Point(until, false));
+		return new Interval(new Point(from, PointType.OPEN), new Point(until, PointType.CLOSE));
 	}
 
 	

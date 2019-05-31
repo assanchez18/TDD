@@ -25,7 +25,7 @@ public class ClosedIntervalBuilder {
 	
 	ClosedInterval build() {
 		assert from <= until;
-		return new ClosedInterval(new Point(from, false), new Point(until, false));
+		return new ClosedInterval(new Point(from, PointType.CLOSE), new Point(until, PointType.CLOSE));
 	}
 
 	
