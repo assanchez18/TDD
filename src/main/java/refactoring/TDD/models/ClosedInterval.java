@@ -1,15 +1,14 @@
 package refactoring.TDD.models;
 
-public class ClosedInterval extends OpenedInterval {
+public class ClosedInterval extends Interval {
 
 	public ClosedInterval(double min, double max) {
-		super(min,max);
-		this.min.close();
-		this.max.close();
+		this.fromPoint = new FromPoint(min,false);
+		this.untilPoint = new UntilPoint(max,false);
 	}
 
-	protected boolean isIncluded(Point point) {
-		return super.isIncluded(point) || this.min.isSamePoint(point) && this.max.isSamePoint(point);
+	@Override
+	protected boolean isIncluded(FromPoint point) {
+		return super.isIncluded(point) || this.fromPoint.isSamePoint(point) && this.untilPoint.isSamePoint(point);
 	}
-	
 }
