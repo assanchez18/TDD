@@ -1,16 +1,15 @@
 package refactoring.TDD.models;
 
-public class ClosedInterval extends OpenedInterval {
+public class ClosedInterval extends Interval {
 
-	public ClosedInterval(double from, double until) {
+	public ClosedInterval(Point from, Point until) {
 		super(from, until);
-		this.fromOpen = false;
-		this.untilOpen = false;
 	}
 
-	protected boolean isIncluded(double value, boolean valueOpen) {
-		return super.isIncluded(value, valueOpen) || 
-				!valueOpen && (this.from == value  || this.until == value);
+	protected boolean isIncluded(Point value) {
+		return super.isIncluded(value) || 
+			   !value.isOpen() && (this.from.getValue() == value.getValue() ||
+				                   this.until.getValue() == value.getValue());
 	}
 	
 }

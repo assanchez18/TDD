@@ -2,28 +2,28 @@ package refactoring.TDD.models;
 
 public class OpenedClosedIntervalBuilder {
 
-	private double min;
+	private double from;
 	
-	private double max;
+	private double until;
 	
 	OpenedClosedIntervalBuilder(){
-		this.min = 0;
-		this.max = 1;
+		this.from = 0;
+		this.until = 1;
 	}
 	
 	OpenedClosedIntervalBuilder min(double min) {
-		this.min = min;
+		this.from = min;
 		return this;
 	}
 
 	OpenedClosedIntervalBuilder max(double max) {
-		this.max = max;
+		this.until = max;
 		return this;
 	}
 	
-	OpenedClosedInterval build() {
-		assert min <= max;
-		return new OpenedClosedInterval(min, max);
+	Interval build() {
+		assert from <= until;
+		return new Interval(new Point(from,true), new Point(until, false));
 	}
 
 	
