@@ -26,7 +26,7 @@ public class OpenedInterval {
 	}
 	
 	private boolean isSameInterval(OpenedInterval another) {
-		return this.from == another.from && this.until == another.until;
+		return this.from == another.from && this.until == another.until && this.from != this.until;
 	}
 	
 	

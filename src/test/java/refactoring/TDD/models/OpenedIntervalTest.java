@@ -83,4 +83,11 @@ public class OpenedIntervalTest extends TestCase {
 		OpenedInterval another = new OpenedIntervalBuilder().min(4).max(4).build();
 		assertTrue(one.isIntersected(another));
 	}
+	
+	@Test
+	public void testIsNotIntersectedWithTwoEmptyInterval() {
+		OpenedInterval one = new OpenedIntervalBuilder().min(3).max(3).build();
+		OpenedInterval another = new OpenedIntervalBuilder().min(3).max(3).build();
+		assertFalse(one.isIntersected(another));
+	}
 }
