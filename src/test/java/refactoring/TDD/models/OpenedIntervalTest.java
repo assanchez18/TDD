@@ -2,7 +2,9 @@ package refactoring.TDD.models;
 
 import org.junit.Test;
 
-public class OpenedIntervalTest extends IntervalTest {
+import junit.framework.TestCase;
+
+public class OpenedIntervalTest extends TestCase {
 	
 	@Test
 	public void testIsNotIntersectedOnLeft() {

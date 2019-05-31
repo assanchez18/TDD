@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import junit.framework.TestCase;
 
-public class IntervalTest extends TestCase{
+public class IntervalTest extends TestCase {
 	
 	@Test
 	public void testIsIntersectedOverlappedOnLeft() {
@@ -47,11 +47,11 @@ public class IntervalTest extends TestCase{
 		OpenedInterval another = new OpenedIntervalBuilder().min(14).max(17).build();
 		assertFalse(one.isIntersected(another));
 	}
-	/*
+	
 	@Test
 	public void testIsNotIntersectedOnLeft() {
 		OpenedInterval one = new OpenedIntervalBuilder().min(3).max(14).build();
 		ClosedInterval another = new ClosedIntervalBuilder().min(1).max(3).build();
 		assertFalse(one.isIntersected(another));
-	}*/
+	}
 }

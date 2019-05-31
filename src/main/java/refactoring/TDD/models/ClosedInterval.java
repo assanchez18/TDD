@@ -4,12 +4,12 @@ public class ClosedInterval extends OpenedInterval {
 
 	public ClosedInterval(double min, double max) {
 		super(min,max);
-		this.minOpen = false;
-		this.maxOpen = false;
+		this.min.close();
+		this.max.close();
 	}
 
-	protected boolean isIncluded(double value, boolean valueOpen) {
-		return super.isIncluded(value, valueOpen) || this.min == value && value == this.max;
+	protected boolean isIncluded(Point point) {
+		return super.isIncluded(point) || this.min.isSamePoint(point) && this.max.isSamePoint(point);
 	}
 	
 }
