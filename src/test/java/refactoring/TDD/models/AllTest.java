@@ -7,6 +7,7 @@ import org.junit.runners.Suite.SuiteClasses;
 
 @RunWith(Suite.class)
 @SuiteClasses({ 
+	IntervalTest.class,
 	OpenedIntervalTest.class,
 	ClosedIntervalTest.class
 })
