@@ -23,15 +23,15 @@ public class OpenedIntervalTest extends TestCase {
 	@Test
 	public void testIsIntersectedOnLeft() {
 		OpenedInterval one = new OpenedIntervalBuilder().min(3).max(14).build();
-		OpenedInterval another = new OpenedIntervalBuilder().min(1).max(3).build();
-		assertFalse(one.isIntersected(another));
+		OpenedInterval another = new OpenedIntervalBuilder().min(1).max(4).build();
+		assertTrue(one.isIntersected(another));
 	}
 	
 	@Test
 	public void testIsIntersectedOnRight() {
 		OpenedInterval one = new OpenedIntervalBuilder().min(3).max(14).build();
-		OpenedInterval another = new OpenedIntervalBuilder().min(14).max(22).build();
-		assertFalse(one.isIntersected(another));
+		OpenedInterval another = new OpenedIntervalBuilder().min(13).max(22).build();
+		assertTrue(one.isIntersected(another));
 	}
 	
 	@Test
