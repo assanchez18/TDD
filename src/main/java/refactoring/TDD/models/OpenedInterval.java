@@ -1,32 +1,32 @@
 package refactoring.TDD.models;
 
 public class OpenedInterval {
-	protected double min;
-	protected boolean minOpen;
+	protected double from;
+	protected boolean fromOpen;
 	
-	protected double max;
-	protected boolean maxOpen;
-	
+	protected double until;
+	protected boolean untilOpen;
 	public OpenedInterval(double min, double max) {
-		this.min = min;
-		this.max = max;
-		this.minOpen = true;
-		this.maxOpen = true;
+		this.from = min;
+		this.until = max;
+		this.fromOpen = true;
+		this.untilOpen = true;
 	}
 
 	public boolean isIntersected(OpenedInterval another) {
-		return this.isIncluded(another.min, another.minOpen) ||
-			   this.isIncluded(another.max, another.maxOpen) ||
-			   another.isIncluded(this.min, this.minOpen) ||
+		return this.isIncluded(another.from, another.fromOpen) ||
+			   this.isIncluded(another.until, another.untilOpen) ||
+			   another.isIncluded(this.from, this.fromOpen) ||
+			   another.isIncluded(this.until, this.untilOpen) || 
 			   this.isSameInterval(another);
 	}
 
 	protected boolean isIncluded(double value, boolean valueOpen) {
-		return this.min < value && value < this.max;
+		return this.from < value && value < this.until;
 	}
 	
 	private boolean isSameInterval(OpenedInterval another) {
-		return this.min == another.min && this.max == another.max;
+		return this.from == another.from && this.until == another.until;
 	}
 	
 	
