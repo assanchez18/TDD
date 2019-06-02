@@ -13,7 +13,8 @@ import org.junit.runners.Suite.SuiteClasses;
 	OpenedClosedIntervalTest.class,
 	ClosedOpenedIntervalTest.class,
 	OpenedClosedIntervalsWithClosedIntervalsTest.class,
-	ClosedOpenedIntervalsWithClosedIntervalsTest.class
+	ClosedOpenedIntervalsWithClosedIntervalsTest.class,
+	OpenedClosedIntervalssWithClosedOpenedIntervalsTest.class
 })
 
 public class AllTest {
